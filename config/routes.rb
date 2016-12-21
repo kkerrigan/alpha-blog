@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   
   root 'pages#home'
   get 'about' => 'pages#about'
+  
+  resources :articles #gave us the paths for all the CRUD operations 
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

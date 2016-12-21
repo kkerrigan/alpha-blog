@@ -4,16 +4,24 @@ class ArticlesController < ApplicationController
    end
    
    def create
-      #render plain: params[:article].ispect
       @article = Article.new(article_params)
-      @article.save
-      redirect_to_articles_show(@article)
+      
+      if @article.save
+          flash[:notice] = "Article was successfully created!"
+         redirect_to article_path(@article) #redirects the newly created article to the show action
+     else
+         render :new
+    end
+   end
+   
+   def show
+      @article = Article.find(params[:id])
    end
    
    
    private
    def article_params
-      params.require(:article).permit(:title, :description) 
+      params.require(:article).permit(:title, :description) #takes as parameters the fields in article that are in the .permit
    end
     
 end

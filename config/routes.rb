@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   get 'about' => 'pages#about'
   
   resources :articles #gave us the paths for all the CRUD operations 
+  
+  get 'signup' => 'users#new'
+  #post 'users' => 'users#create'
+  resources :users, except: [:new] #more efficient than above method
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

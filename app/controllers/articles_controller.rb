@@ -51,7 +51,7 @@ class ArticlesController < ApplicationController
    end
    
    def article_params
-      params.require(:article).permit(:title, :description) #takes as parameters the fields in article that are in the .permit
+      params.require(:article).permit(:title, :description, category_ids: []) #takes as parameters the fields in article that are in the .permit
    end
    
    def require_same_user

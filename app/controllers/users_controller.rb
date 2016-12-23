@@ -28,6 +28,10 @@ class UsersController < ApplicationController
         end
     end
     
+    def show
+        #uses set_user to find the correct user to show
+    end
+    
     
     
     private

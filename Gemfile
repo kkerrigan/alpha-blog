@@ -53,8 +53,6 @@ end
 group :production do
   #use post-gress gem so that application knows to use post-gress input/output
   gem 'pg' 
-  
-  #
   gem 'rails_12factor'
 end
 
